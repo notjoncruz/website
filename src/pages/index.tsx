@@ -13,6 +13,8 @@ import { HiOutlineExternalLink } from "react-icons/hi";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import Link from "next/link";
+import { sections } from "~/lib/config";
+import { it } from "node:test";
 
 type PageProps = { projects: GithubRepo[]; posts: PageProperties[] };
 
@@ -31,8 +33,8 @@ const Home: NextPage<PageProps> = ({ projects = [], posts = [] }) => {
           }
         >
           <h1 className="font-bold text-4xl md:text-5xl">Jonathan Cruz</h1>
-          <h2 className="font-semibold text-xl md:text-2xl mt-3">
-            Software Engineer
+          <h2 className="font-thin text-2xl md:text-3xl">
+            Quantum Computing Researcher
           </h2>
           <motion.div
             key={"about"}
@@ -45,7 +47,8 @@ const Home: NextPage<PageProps> = ({ projects = [], posts = [] }) => {
             }
           >
             <p>
-              Third year undergraduate student at{" "}
+              Fifth year BS/MS student in Software Engineering and Computer
+              Science at{" "}
               <a
                 className={"dark:text-white underline"}
                 href={"https://www.rit.edu/"}
@@ -53,25 +56,7 @@ const Home: NextPage<PageProps> = ({ projects = [], posts = [] }) => {
                 target={"_blank"}
               >
                 Rochester Institute of Technology
-              </a>{" "}
-              studying Software Engineering and Quantum Information Science and
-              Technology.
-            </p>
-            <p>
-              I started university with little background knowledge in
-              programming after spending some time learning web development in
-              early-mid 2020. I started by watching a few YouTube videos on web
-              development and then purchased a Udemy course on Electron.
-              Afterwards, curiosity got to me and I dipped my toes into reverse
-              engineering obfuscated applications.
-            </p>
-            <p>
-              On my spare time, I further my understanding on Quantum Computing,
-              Artificial Intelligence and Neuroscience. I share what I learn on
-              my{" "}
-              <Link href={"/blog"} className="dark:text-white underline">
-                blog
-              </Link>
+              </a>
               .
             </p>
           </motion.div>
@@ -81,9 +66,7 @@ const Home: NextPage<PageProps> = ({ projects = [], posts = [] }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.5 }}
             transition={{ ease: "easeInOut", duration: 0.5, delay: 0.75 }}
-            className={
-              "mt-6 md:mt-12 lg:mt-24 flex flex-wrap items-center gap-x-9"
-            }
+            className={"mt-12 flex flex-wrap items-center gap-x-9"}
           >
             <a
               className={"text-sm flex items-center"}
@@ -101,7 +84,7 @@ const Home: NextPage<PageProps> = ({ projects = [], posts = [] }) => {
             </a>
             <a
               className={"text-sm flex items-center"}
-              href={"https://www.linkedin.com/in/notcruz/"}
+              href={"https://www.linkedin.com/in/notjoncruz/"}
               rel={"noreferrer"}
               target={"_blank"}
             >
@@ -115,7 +98,7 @@ const Home: NextPage<PageProps> = ({ projects = [], posts = [] }) => {
             </a>
             <a
               className={"text-sm flex items-center"}
-              href={"mailto:jon@crzx.io"}
+              href={"mailto:cruz@notjon.dev"}
               rel={"noreferrer"}
               target={"_blank"}
             >
@@ -139,92 +122,26 @@ const Home: NextPage<PageProps> = ({ projects = [], posts = [] }) => {
             "w-full lg:max-w-xl xl:max-w-3xl lg:ml-auto p-6 lg:p-0 lg:py-24 lg:pr-24 xl:pl-24 space-y-12"
           }
         >
-          <div className={"space-y-3"}>
-            <Container
-              color={"border-[#FF9900]"}
-              header={{
-                one: "Incoming Intern",
-                two: "May 2023 - Sept 2023",
-                three: "New York, NY",
-              }}
-              body={{
-                one: "Amazon.com Services LLC",
-                two: "Software Dev Engineer Intern I",
-              }}
-              externals={[{ key: "Website", value: "https://www.amazon.com/" }]}
-            />
-            <Container
-              color={"border-green-500"}
-              header={{
-                one: "Research",
-                two: "Jan 2023 - Present",
-                three: "Rochester, NY",
-              }}
-              body={{
-                one: "Accessible Learning Labs",
-                two: "Senior Dev Engineer",
-              }}
-              externals={[{ key: "Website", value: "https://all.rit.edu/" }]}
-            />
-            <Container
-              color={"border-red-500"}
-              header={{
-                one: "Teaching",
-                two: "Sept 2021 - Dec 2022",
-                three: "Rochester, NY",
-              }}
-              body={{
-                one: "RIT Academic Success Center",
-                two: "Supplemental Instruction Leader",
-              }}
-              externals={[
-                {
-                  key: "Website",
-                  value:
-                    "https://www.rit.edu/academicsuccesscenter/supplemental-instruction",
-                },
-              ]}
-            />
-            <Container
-              color={"border-red-500"}
-              header={{
-                one: "Internship",
-                two: "May 2022 - Aug 2022",
-                three: "New York, NY",
-              }}
-              body={{
-                one: "Amazon.com Services LLC",
-                two: "Software Dev Engineer Intern I",
-              }}
-              externals={[{ key: "Website", value: "https://www.amazon.com/" }]}
-            />
-          </div>
-          <div className={"space-y-3"}>
-            {projects.map((project) => (
-              <Container
-                key={project.repo}
-                color={"border-purple-500"}
-                header={{ one: project.language }}
-                body={{ one: project.repo, two: project.description }}
-                others={[
-                  { key: project.stars, icon: <AiOutlineStar /> },
-                  { key: project.forks, icon: <AiOutlineFork /> },
-                ]}
-                externals={[{ key: "Repository", value: project.link }]}
-              />
-            ))}
-          </div>
-          <div className={"space-y-3"}>
-            {posts.map((post) => (
-              <Container
-                key={post?.title}
-                color={"border-blue-500"}
-                header={{ one: "Featured", two: `${post?.created}` }}
-                body={{ one: `${post.title}`, two: `${post.description}` }}
-                externals={[{ key: "Post", value: `/blog/${post.slug}` }]}
-              />
-            ))}
-          </div>
+          {sections.map((section) => {
+            return (
+              <div key={section?.title} className={"space-y-3"}>
+                <h3 className="font-bold text-3xl md:text-4xl mb-6">
+                  {section?.title}
+                </h3>
+                {section?.items?.map((item) => {
+                  return (
+                    <Container
+                      key={item.body.one}
+                      color={section.color}
+                      header={item.header}
+                      body={item.body}
+                      externals={item.externals}
+                    />
+                  );
+                })}
+              </div>
+            );
+          })}
         </motion.div>
       </div>
     </AnimatePresence>
