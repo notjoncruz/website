@@ -2,9 +2,6 @@
 const nextConfig = {
     reactStrictMode: false,
     swcMinify: true,
-    images: {
-        domains: ["www.notion.so"]
-    },
     experimental: {},
 }
 
