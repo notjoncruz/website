@@ -1,6 +1,6 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 
-import Layout from "~/components/Layout";
 import TextLink from "~/components/TextLink";
 import { type Collection, collections } from "~/content/collections";
 
@@ -53,7 +53,11 @@ export const getStaticProps: GetStaticProps<
  */
 const CollectionPage: NextPage<CollectionPageProps> = ({ collection }) => {
   return (
-    <Layout title={collection.title}>
+    <>
+      <Head>
+        <title>{`${collection.title} · Jonathan Cruz`}</title>
+      </Head>
+
       <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
         {collection.title}
       </h1>
@@ -72,7 +76,7 @@ const CollectionPage: NextPage<CollectionPageProps> = ({ collection }) => {
           </li>
         ))}
       </ul>
-    </Layout>
+    </>
   );
 };
 

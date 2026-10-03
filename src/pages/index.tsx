@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 import IconLink from "~/components/IconLink";
-import Layout from "~/components/Layout";
 import TextLink from "~/components/TextLink";
 
 /**
@@ -12,7 +11,7 @@ import TextLink from "~/components/TextLink";
  */
 const Home: NextPage = () => {
   return (
-    <Layout>
+    <>
       <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
         Jonathan Cruz
       </h1>
@@ -52,7 +51,7 @@ const Home: NextPage = () => {
         />
         <IconLink href="mailto:cruz@notjon.dev" label="Email" icon={FiMail} />
       </div>
-    </Layout>
+    </>
   );
 };
 

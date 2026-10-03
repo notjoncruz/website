@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import type { ReactNode } from "react";
@@ -7,7 +5,6 @@ import type { ReactNode } from "react";
 import { collections } from "~/content/collections";
 
 type LayoutProps = {
-  title?: string;
   children: ReactNode;
 };
 
@@ -20,44 +17,34 @@ const navLinks = [
 ];
 
 /**
- * Page shell with site navigation and the shared fade-in animation.
- * Navigation includes Home and one link per collection.
+ * Site shell that stays mounted across page changes. The shell fades up once
+ * on first load. On each page change only the page content fades in. Visitors
+ * who prefer reduced motion get the fade without the upward movement.
  *
- * @param title Page name shown before the site name in the browser tab.
- * @param children Page content.
- * @returns The page wrapped in the site layout.
+ * @param children Current page content.
+ * @returns The page wrapped in the site navigation.
  */
-const Layout = ({ title, children }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   const { asPath } = useRouter();
 
   return (
-    <>
-      {title && (
-        <Head>
-          <title>{`${title} · Jonathan Cruz`}</title>
-        </Head>
-      )}
-      <motion.main
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mx-auto max-w-xl px-6 py-16 md:py-24"
-      >
-        <nav className="mb-12 flex items-center gap-5 text-sm">
-          {navLinks.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              aria-current={asPath === href ? "page" : undefined}
-              className="text-neutral-500 transition-colors hover:text-neutral-900 aria-[current=page]:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 dark:aria-[current=page]:text-neutral-100"
-            >
-              {label}
-            </Link>
-          ))}
-        </nav>
+    <main className="mx-auto max-w-xl px-6 py-16 motion-safe:animate-enter motion-reduce:animate-fade md:py-24">
+      <nav className="mb-12 flex items-center gap-5 text-sm">
+        {navLinks.map(({ href, label }) => (
+          <Link
+            key={href}
+            href={href}
+            aria-current={asPath === href ? "page" : undefined}
+            className="text-neutral-500 transition-colors hover:text-neutral-900 aria-[current=page]:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 dark:aria-[current=page]:text-neutral-100"
+          >
+            {label}
+          </Link>
+        ))}
+      </nav>
+      <div key={asPath} className="animate-fade">
         {children}
-      </motion.main>
-    </>
+      </div>
+    </main>
   );
 };
 
