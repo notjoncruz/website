@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import type { ReactNode } from "react";
 
+import ThemeToggle from "~/components/ThemeToggle";
 import { collections } from "~/content/collections";
 
 type LayoutProps = {
@@ -40,6 +41,7 @@ const Layout = ({ children }: LayoutProps) => {
             {label}
           </Link>
         ))}
+        <ThemeToggle />
       </nav>
       <div key={asPath} className="animate-fade">
         {children}
