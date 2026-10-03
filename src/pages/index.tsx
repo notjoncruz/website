@@ -13,11 +13,11 @@ import TextLink from "~/components/TextLink";
 const Home: NextPage = () => {
   return (
     <Layout>
-      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
+      <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
         Jonathan Cruz
       </h1>
 
-      <div className="mt-8 space-y-4 text-neutral-600 dark:text-neutral-400 leading-relaxed">
+      <div className="mt-8 space-y-4 leading-relaxed text-neutral-600 dark:text-neutral-400">
         <p>
           I work at <TextLink href="https://www.amazon.com/">Amazon</TextLink>,
           building agentic solutions to improve its catalog. I interned there

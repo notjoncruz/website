@@ -54,11 +54,11 @@ export const getStaticProps: GetStaticProps<
 const CollectionPage: NextPage<CollectionPageProps> = ({ collection }) => {
   return (
     <Layout title={collection.title}>
-      <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
+      <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
         {collection.title}
       </h1>
 
-      <p className="mt-8 text-neutral-600 dark:text-neutral-400 leading-relaxed">
+      <p className="mt-8 leading-relaxed text-neutral-600 dark:text-neutral-400">
         {collection.intro}
       </p>
 

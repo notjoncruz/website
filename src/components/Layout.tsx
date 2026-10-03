@@ -41,7 +41,7 @@ const Layout = ({ title, children }: LayoutProps) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="max-w-xl mx-auto px-6 py-16 md:py-24"
+        className="mx-auto max-w-xl px-6 py-16 md:py-24"
       >
         <nav className="mb-12 flex items-center gap-5 text-sm">
           {navLinks.map(({ href, label }) => (
@@ -49,7 +49,7 @@ const Layout = ({ title, children }: LayoutProps) => {
               key={href}
               href={href}
               aria-current={asPath === href ? "page" : undefined}
-              className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 aria-[current=page]:text-neutral-900 dark:aria-[current=page]:text-neutral-100 transition-colors"
+              className="text-neutral-500 transition-colors hover:text-neutral-900 aria-[current=page]:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 dark:aria-[current=page]:text-neutral-100"
             >
               {label}
             </Link>

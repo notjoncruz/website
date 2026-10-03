@@ -18,7 +18,7 @@ const TextLink = ({ href, children }: TextLinkProps) => {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="text-neutral-900 dark:text-neutral-100 underline underline-offset-2 decoration-neutral-300 dark:decoration-neutral-600 hover:decoration-neutral-500 dark:hover:decoration-neutral-400 transition-colors"
+      className="text-neutral-900 underline decoration-neutral-300 underline-offset-2 transition-colors hover:decoration-neutral-500 dark:text-neutral-100 dark:decoration-neutral-600 dark:hover:decoration-neutral-400"
     >
       {children}
     </a>
