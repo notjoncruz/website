@@ -46,6 +46,10 @@ body {
   @apply min-h-screen;
 }
 
+:focus-visible {
+  @apply rounded-sm outline outline-2 outline-offset-2 outline-stone-900 dark:outline-stone-100;
+}
+
 ::selection {
   @apply bg-stone-200 dark:bg-stone-700;
 }
