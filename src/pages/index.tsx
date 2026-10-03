@@ -16,7 +16,7 @@ const Home: NextPage = () => {
         Jonathan Cruz
       </h1>
 
-      <div className="mt-8 space-y-4 leading-relaxed text-neutral-600 dark:text-neutral-400">
+      <div className="mt-8 space-y-4 leading-relaxed text-stone-600 dark:text-stone-400">
         <p>
           I work at <TextLink href="https://www.amazon.com/">Amazon</TextLink>,
           building agentic solutions to improve its catalog. I interned there

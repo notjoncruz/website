@@ -35,7 +35,7 @@ const Layout = ({ children }: LayoutProps) => {
             key={href}
             href={href}
             aria-current={asPath === href ? "page" : undefined}
-            className="text-neutral-500 transition-colors hover:text-neutral-900 aria-[current=page]:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 dark:aria-[current=page]:text-neutral-100"
+            className="text-stone-600 transition-colors hover:text-stone-900 aria-[current=page]:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100 dark:aria-[current=page]:text-stone-100"
           >
             {label}
           </Link>

@@ -23,7 +23,7 @@ const IconLink = ({ href, label, icon: Icon }: IconLinkProps) => {
       href={href}
       target={isWeb ? "_blank" : undefined}
       rel={isWeb ? "noreferrer" : undefined}
-      className="-m-2 p-2 text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
+      className="-m-2 p-2 text-stone-500 transition-colors hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100"
       aria-label={label}
     >
       <Icon className="h-5 w-5" />

@@ -62,7 +62,7 @@ const CollectionPage: NextPage<CollectionPageProps> = ({ collection }) => {
         {collection.title}
       </h1>
 
-      <p className="mt-8 leading-relaxed text-neutral-600 dark:text-neutral-400">
+      <p className="mt-8 leading-relaxed text-stone-600 dark:text-stone-400">
         {collection.intro}
       </p>
 
@@ -70,7 +70,7 @@ const CollectionPage: NextPage<CollectionPageProps> = ({ collection }) => {
         {collection.items.map((item) => (
           <li key={item.url} className="leading-relaxed">
             <TextLink href={item.url}>{item.name}</TextLink>
-            <p className="mt-1 text-neutral-600 dark:text-neutral-400">
+            <p className="mt-1 text-stone-600 dark:text-stone-400">
               {item.description}
             </p>
           </li>
