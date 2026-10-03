@@ -15,25 +15,19 @@ export const collections: Collection[] = [
   {
     slug: "blogs",
     title: "Blogs",
-    intro: "Tech blogs I read and recommend.",
+    intro: "Tech blog posts I read and recommend.",
     items: [
       {
-        name: "Julia Evans",
-        url: "https://jvns.ca/",
+        name: "Minions: Stripe's one-shot, end-to-end coding agents",
+        url: "https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents",
         description:
-          "Clear, friendly explanations of Linux, networking, and git.",
+          "How Stripe runs unattended coding agents that merge over a thousand pull requests each week.",
       },
       {
-        name: "Dan Luu",
-        url: "https://danluu.com/",
+        name: "Minions: Stripe's one-shot, end-to-end coding agents, Part 2",
+        url: "https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents-part-2",
         description:
-          "Long, data-driven essays on software, hardware, and careers.",
-      },
-      {
-        name: "Simon Willison",
-        url: "https://simonwillison.net/",
-        description:
-          "Daily notes on LLMs, Python, and building open source tools.",
+          "The setup behind them: devboxes, blueprints, rule files, MCP context, and CI feedback loops.",
       },
     ],
   },
