@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps<
   CollectionPageParams
 > = ({ params }) => {
   const collection = collections.find(
-    (candidate) => candidate.slug === params?.collection
+    (candidate) => candidate.slug === params?.collection,
   );
 
   if (!collection) {

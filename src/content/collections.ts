@@ -20,17 +20,20 @@ export const collections: Collection[] = [
       {
         name: "Julia Evans",
         url: "https://jvns.ca/",
-        description: "Clear, friendly explanations of Linux, networking, and git.",
+        description:
+          "Clear, friendly explanations of Linux, networking, and git.",
       },
       {
         name: "Dan Luu",
         url: "https://danluu.com/",
-        description: "Long, data-driven essays on software, hardware, and careers.",
+        description:
+          "Long, data-driven essays on software, hardware, and careers.",
       },
       {
         name: "Simon Willison",
         url: "https://simonwillison.net/",
-        description: "Daily notes on LLMs, Python, and building open source tools.",
+        description:
+          "Daily notes on LLMs, Python, and building open source tools.",
       },
     ],
   },
